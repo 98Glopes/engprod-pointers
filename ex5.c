@@ -11,23 +11,23 @@ Saida: 60,50,40,30,20,10
 
 void main(void){
 
-    int entrada[8] = {10, 20, 30, 40, 50, 60, 70, 90};
+    int entrada = {1,2,3,5,6};
 
+    int size = (sizeof entrada)/4;
     
-    int *e; e = entrada;
-    int *s; s = malloc(sizeof(entrada));
+    int *e; 
+    e = entrada;
+    int *s; 
+    s = malloc(size);
     
-    e+= (sizeof(entrada)/4);
 
-    for(int i=1; i <= (sizeof(entrada)/4) ; i++){
+    for(int i=0; i < size ; i++){
 
-        e -=i;
-        *s = entrada[(sizeof(entrada)/4)-i];
-        printf("%i, ", *s);
-        s++;
+        *(s+i) = *(e + (size-1) - i);
+        printf("%i, ", *(s+i));
         
     }
-
+    free(s);
     printf("\n");
 
 }
