@@ -15,12 +15,14 @@ typedef struct  {
 
 //ponteiro para o vetor de Registro para alocação dinamica
 static Registro *MeuBanco;
+static Registro *MeuBancoAux;
 
 void inicializa_banco(void);
-void grava_info(Registro NovoRegistro);
+int grava_info(Registro NovoRegistro);
 void exibe_tudo(void);
 void print_registro(Registro NovoRegistro);
 void deleta_registro(unsigned int primary_key);
 void aloca_memoria(void);
+void limpa_memoria(void);
 int verifica_memoria(void);
-Registro exibe_registro(unsigned int primary_key);
+Registro exibe_registro(int primary_key);
